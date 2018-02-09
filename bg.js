@@ -12,7 +12,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(req){
      if(headers[i].value.indexOf('//mail.google.com/') > 0) {
        from_gmail = true;
        // check if we're in print-mode in gmail
-       if (headers[i].value.indexOf('view=pt')) print_mode = true;
+       if (headers[i].value.indexOf('view=pt') >= 0) print_mode = true;
        break;
      }
    }
