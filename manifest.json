@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "PixelBlock",
-  "version": "2018.02.08",
+  "version": "2018.05.20",
   "permissions": [
     "*://*.googleusercontent.com/proxy/*", "webRequest", "webRequestBlocking"
   ],
