@@ -210,7 +210,7 @@ var pixelblock = (function(){
     }catch(e){
       console.log('PixelBlock Error: ' + e);
     }
-    setTimeout(scan_images, 100);
+    // setTimeout(scan_images, 100);
   }
 
   var init = function(){
@@ -221,7 +221,7 @@ var pixelblock = (function(){
   }
 
   var start = function(){
-    setTimeout(scan_images, 450);
+    setInterval(scan_images, 450);
   }
 
   return {init:init, start:start};
