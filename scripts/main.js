@@ -91,7 +91,18 @@ var pixelblock = (function(){
       if ( (w1 == 0 || w1 == 1 || w2 == 0 || w2 == 1 || w3 == 0 || w3 == 1 || w4 == 0 || w4 == 1) &&
           (h1 == 0 || h1 == 1 || h2 == 0 || h2 == 1 || h3 == 0 || h3 == 1 || h4 == 0 || h4 == 1)
       ) {
-        img.tracker_info = {pattern:'', name:'Unknown', url:''};
+        var name = "Unknown";
+        if(!!img && !!img.src && img.src.indexOf("#") > -1) {
+          name = img.src.split("#")[1];
+          try {
+            var url = new URL(name);
+            var hostname = url.hostname;
+            name = hostname;
+          }catch(e) {
+            // name = "Unknown";
+          }
+        }
+        img.tracker_info = {pattern:'', name: name, url:''};
         blacklisted = true;
       }
     }
