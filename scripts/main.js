@@ -121,7 +121,10 @@ var pixelblock = (function(){
    * Whitelist an image, i.e. let it display/load
    */
   var whitelist_image = function(img){
-    if(img.src.indexOf(safe_pattern) == -1) img.src = img.src.replace('#', safe_pattern);
+    if(img.src.indexOf(safe_pattern) == -1) {
+      img.src = img.src.replace('#', safe_pattern);
+      $(img).removeAttr('tracker');
+    }
   }
 
   /*
@@ -141,6 +144,14 @@ var pixelblock = (function(){
 
       eye.show();
       $(email).find('h3.iw').append(eye);// div.gK
+    }
+
+    var no_tracking_images = $(email).find("img[tracker='false']");
+
+    if(no_tracking_images.length > 0){
+      $("img[tracker='false']", email).each(function(){
+         whitelist_image(this);
+      });
     }
   }
 
@@ -196,6 +207,7 @@ var pixelblock = (function(){
               this.setAttribute('tracker', 'true');
               tracking_image_found = true;
             }else{
+              this.setAttribute('tracker', 'false');
               whitelist_image(this);
             }
           }
