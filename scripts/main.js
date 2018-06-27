@@ -38,8 +38,15 @@ var pixelblock = (function(){
                    {name:'ExactTarget',    pattern:'exct.net/open.aspx',      url:'http://exacttarget.com'},
                    {name:'Litmus',         pattern:'emltrk.com',              url:'http://litmus.com'},
                    {name:'dotmailer',      pattern:'trackedlink.net',         url:'http://dotmailer.com'},
-                   {name:'Unknown',        pattern:'mailer.dzone.com/open.php', url:''},
-                   {name:'Unknown',        pattern:'give.islamicreliefcanada.org/smtp.mailopen', url:''}
+                   {name:'dzone',          pattern:'mailer.dzone.com/open.php', url:''},
+                   {name:'islamicreliefcanada',        pattern:'give.islamicreliefcanada.org/smtp.mailopen', url:''},
+                   {name:'TalentIQ',       pattern:'volkorn.com/t/e/',        url:''},
+                   {name:'TalentIQ',       pattern:'korto.info/t/e/',         url:''},
+                   {name:'TalentIQ',       pattern:'dutily.com/t/e/',         url:''},
+                   {name:'Nylas',          pattern:'link.nylas',              url:''},
+                   {name:'Nylas',          pattern:'nylas.com/open',          url:'http://nylas.com/N1'},
+                   {name:'Salesloft',      pattern:'sdr.salesloft.com/email_trackers',        url:'http://salesloft.com'}
+
                   ];
 
   /*
